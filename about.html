@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renuka Agency</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fffcf3]">
+    <div class="w-full">
+        <!-- Header -->
+        <!-- <header class="bg-gray-900 text-white">
+            <div class="container mx-auto flex justify-between items-center py-4 px-6">
+                <div class="text-lg font-bold flex items-center space-x-2">
+                    <span class="text-xl font-bold">RA</span>
+                    <span>Renuka Agency</span>
+                </div>
+                <nav class="space-x-6">
+                    <a href="#" class="hover:text-yellow-400">Gallery</a>
+                    <a href="#" class="hover:text-yellow-400">About</a>
+                    <a href="#" class="hover:text-yellow-400">Services</a>
+                    <a href="#" class="hover:text-yellow-400">Contact</a>
+                    <a href="#" class="text-yellow-400 font-semibold">Achievements</a>
+                </nav>
+            </div>
+        </header> -->
+
+        <!-- Hero Section -->
+        <section class="relative">
+            <!-- Image Background -->
+            <div class="relative">
+                <img src="./assets/images/about.svg" alt="Hero Image" class="w-full h-[700px] object-cover">
+                <!-- Black Overlay -->
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+        </section>
+
+
+
+        <!-- Info Section -->
+        <section class="bg-[#fffcf3] py-12">
+            <div class="container flex flex-wrap lg:flex-nowrap px-6">
+                <!-- Image -->
+                <div class="w-full lg:w-1/2 relative top-[-220px]">
+                    <img src="./assets/images/praveen_ronad.svg" alt="Child">
+                </div>
+
+                <!-- Text Content -->
+                <div class="flex-grow w-full relative right-[100px] lg:w-2/3">
+                    <!-- Heading -->
+                    <h2 class="text-4xl font-bold mb-6 text-center lg:text-left">Mr. Praveen Ronad</h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 text-2xl leading-relaxed mb-6 text-center lg:text-left">
+                        With a team of industry experts and a track record of success with over 50 New York
+                        Times and Wall Street Journal best sellers, we partner with you to create an exceptional book
+                        that will thrive in the marketplace.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel Section -->
+        <section>
+            <h1 class="text-center mb-8">
+                <span class="bg-yellow-600 text-white px-4 py-2 text-4xl font-bold">Our Achievements</span>
+            </h1>
+
+            <div class="container mx-auto px-6">
+
+                <!-- Carousel Wrapper -->
+                <div class="relative overflow-hidden">
+                    <!-- Scroll Container -->
+                    <div id="scroll-carousel" class="flex w-full items-center gap-6">
+                        <!-- Slide 1 -->
+                        <div class="">
+                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 1"
+                                class="rounded-lg shadow-lg w-[100vh] h-auto">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="">
+                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 2"
+                                class="rounded-lg shadow-lg w-[100vh] h-auto">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="">
+                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 3"
+                                class="rounded-lg shadow-lg w-[100vh] h-auto">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="">
+                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 4"
+                                class="rounded-lg shadow-lg w-[100vh] h-auto">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="bg-gray-50 py-12">
+            <div class="container mx-auto px-6">
+                <!-- Section Heading -->
+                <h2 class="text-center text-3xl font-bold text-gray-800 mb-6">About Us</h2>
+                <!-- Content -->
+                <p class="text-center text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    With over <span class="font-bold">10 years of expertise</span> in the publishing industry, our
+                    agency has been a trusted partner in creating, curating, and distributing high-quality books
+                    tailored to meet diverse educational needs.
+                    We are proud to serve as a <span class="font-bold">leading book distributor</span> for over 250
+                    schools across Karnataka, delivering exceptional content that empowers students and educators alike.
+                </p>
+            </div>
+            <div class="flex justify-center items-center mt-8">
+                <div
+                    class="bg-yellow-500 w-64 text-center text-black px-2 py-4 text-lg font-medium flex items-center justify-center gap-2">
+                    <img src="./assets/images/ra.png" alt="Logo" class="w-auto h-6">
+                    Renuka Agency
+                </div>
+            </div>
+        </section>
+        <section class="py-12 bg-white">
+            <div class="flex justify-center items-center">
+                <img src="./assets/images/banner.svg" alt="Centered Image" class="w-auto h-auto max-w-full">
+            </div>
+        </section>
+        
+
+
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.getElementById('scroll-carousel');
+        let scrollAmount = 0;
+
+        function autoScroll() {
+            scrollAmount += 1; // Scroll by 1px
+            if (scrollAmount >= carousel.scrollWidth / 2) {
+                scrollAmount = 0; // Reset to the start when halfway through
+            }
+            carousel.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+
+        // Start scrolling with a smooth interval
+        setInterval(autoScroll, 10); // Scroll every 10ms for a smooth effect
+    });
+</script>
+
+</html>
