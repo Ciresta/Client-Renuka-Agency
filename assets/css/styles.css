@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+  
+  .inter-medium {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+  
+  .inter-semibold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600; /* Semi-Bold */
+    font-style: normal;
+  }
+  
+  .inter-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  .inter-extrabold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800; /* Extra-Bold */
+    font-style: normal;
+  }
+
+  #scroll-carousel {
+    display: flex;
+    white-space: nowrap; /* Prevent line breaks */
+    transition: transform 0.1s linear; /* Smooth scrolling effect */
+  }
+
+  .overflow-hidden {
+    overflow: hidden; /* Hide overflowing images */
+  }
+
+  .flex-shrink-0 img {
+    width: 300px; /* Set a consistent size for the images */
+    height: auto;
+  }
