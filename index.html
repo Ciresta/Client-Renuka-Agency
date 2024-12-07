@@ -11,11 +11,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="./assets/css/styles.css" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
 </head>
 
 <body class="bg-[#fffcf3]">
@@ -36,6 +31,59 @@
                 </nav>
             </div>
         </header> -->
+ <!-- Navbar Section -->
+<!-- Navbar Section -->
+<nav class="bg-black py-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Logo Section -->
+    <div class="md:flex-shrink-0">
+      <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="block lg:hidden p-2">
+      <button id="hamburger-icon" class="text-white focus:outline-none">
+        <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navbar Links (For Larger Screens) -->
+    <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
+      <li><a href="#" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a></li>
+      <li><a href="#about" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a></li>
+      <li><a href="#gallery" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a></li>
+      <li><a href="#books" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a></li>
+      <li><a href="#contact" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed z-10 inset-0 bg-black bg-opacity-70 text-white transform -translate-x-full transition-transform duration-300">
+  <div class="p-6">
+    <!-- Close Button -->
+    <button id="close-sidebar" class="text-white focus:outline-none absolute top-4 right-6">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Sidebar Links -->
+    <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
+      <li><a href="#" class="hover:text-yellow-500 transition-all">Home</a></li>
+      <li><a href="#about" class="hover:text-yellow-500 transition-all">About</a></li>
+      <li><a href="#gallery" class="hover:text-yellow-500 transition-all">Gallery</a></li>
+      <li><a href="#books" class="hover:text-yellow-500 transition-all">Books</a></li>
+      <li><a href="#contact" class="hover:text-yellow-500 transition-all">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+        
+
+
 
     <!-- Hero Section -->
     <section class="relative">
@@ -47,7 +95,7 @@
             Renuka Agency, Hubli, KA
           </div>
           <h1 class="text-5xl font-bold mt-4 py-2">
-            <span class="inter-regular text-[#C9C9C9]">Books Distributors for North <br> Karnataka</span> <span
+            <span class="inter-regular font-light text-[#C9C9C9]">Books Distributors for North <br> Karnataka</span> <span
               class="text-white font-bold">schools</span><span class="font-light"> and</span> <span
               class="text-white font-bold">shops</span>
           </h1>
@@ -61,92 +109,81 @@
     <section class="bg-[#fffcf3] py-12">
       <div class="container flex flex-wrap lg:flex-nowrap px-6">
         <!-- Image -->
-        <div class="w-full lg:w-1/2 relative top-[-220px]">
+        <div class="w-full lg:w-1/2 relative top-[-150px] md:top-[-220px]">
           <img src="./assets/images/child.svg" alt="Child" class="rounded-lg shadow-lg">
         </div>
 
-        <!-- Text Content -->
-        <div class="flex-grow w-full relative right-[100px] lg:w-2/3">
-          <!-- Heading -->
-          <h2 class="text-4xl font-bold mb-6 text-center lg:text-left">What we Do?</h2>
+    <!-- Text Content -->
+<div class="flex-grow w-full relative lg:w-2/3 mx-auto">
+  <!-- Heading -->
+  <h2 class="text-4xl font-bold mb-6 text-center lg:text-left">What we Do?</h2>
 
-          <!-- Description -->
-          <p class="text-gray-700 text-2xl leading-relaxed mb-6 text-center lg:text-left">
-            With over a decade of excellence, we are trusted by 250+ schools for reliable book distribution, backed by a
-            commitment to quality that fosters intellectual growth. Our experienced team ensures seamless publishing and
-            delivery, making us a trusted partner in education.
-          </p>
+  <!-- Description -->
+  <p class="text-gray-700 text-2xl leading-relaxed mb-6 text-center lg:text-left">
+    With over a decade of excellence, we are trusted by 250+ schools for reliable book distribution, backed by a
+    commitment to quality that fosters intellectual growth. Our experienced team ensures seamless publishing and
+    delivery, making us a trusted partner in education.
+  </p>
 
-          <!-- Icons Section -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Item 1 -->
-            <div class="flex flex-col">
-              <!-- Box with Icon -->
-              <div class="flex justify-center items-center bg-[#EFA841] text-white w-28 h-28 rounded-lg shadow-lg">
-                <i class="fas fa-book text-4xl"></i>
-              </div>
-              <!-- Heading Below Box -->
-              <h3 class="font-semibold text-lg mt-3">Customised</h3>
-            </div>
-            <!-- Item 2 -->
-            <div class="flex flex-col items-center">
-              <!-- Box with Icon -->
-              <div class="flex justify-center items-center bg-[#EFA841] text-white w-28 h-28 rounded-lg shadow-lg">
-                <i class="fas fa-desktop text-4xl"></i>
-              </div>
-              <!-- Heading Below Box -->
-              <h3 class="font-semibold text-lg mt-3">Class wise</h3>
-            </div>
-            <!-- Item 3 -->
-            <div class="flex flex-col items-center">
-              <!-- Box with Icon -->
-              <div class="flex justify-center items-center bg-[#EFA841] text-white w-28 h-28 rounded-lg shadow-lg">
-                <i class="fas fa-print text-4xl"></i>
-              </div>
-              <!-- Heading Below Box -->
-              <h3 class="font-semibold text-lg mt-3">Publish</h3>
-            </div>
-          </div>
+  <!-- Icons Section -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Item 1 -->
+    <div class="flex flex-col items-center md:items-start">
+      <!-- Box with Icon -->
+      <div class="flex justify-center items-center bg-[#EFA841] text-white w-28 h-28 rounded-lg shadow-lg">
+        <i class="fas fa-book text-4xl"></i>
+      </div>
+      <!-- Heading Below Box -->
+      <h3 class="font-semibold text-lg mt-3">Customised</h3>
+    </div>
+    <!-- Item 2 -->
+    <div class="flex flex-col items-center md:items-start">
+      <!-- Box with Icon -->
+      <div class="flex justify-center items-center bg-[#EFA841] text-white w-28 h-28 rounded-lg shadow-lg">
+        <i class="fas fa-desktop text-4xl"></i>
+      </div>
+      <!-- Heading Below Box -->
+      <h3 class="font-semibold text-lg mt-3">Class wise</h3>
+    </div>
+    <!-- Item 3 -->
+    <div class="flex flex-col items-center md:items-start">
+      <!-- Box with Icon -->
+      <div class="flex justify-center items-center bg-[#EFA841] text-white w-28 h-28 rounded-lg shadow-lg">
+        <i class="fas fa-print text-4xl"></i>
+      </div>
+      <!-- Heading Below Box -->
+      <h3 class="font-semibold text-lg mt-3">Publish</h3>
+    </div>
+  </div>
+</div>
 
-
-        </div>
       </div>
     </section>
 
     <!-- Carousel Section -->
-    <section class="py-12">
-      <div class="container mx-auto px-6">
-
-        <!-- Carousel Wrapper -->
-        <div class="relative overflow-hidden">
-          <!-- Scroll Container -->
-          <div id="scroll-carousel" class="flex w-full items-center gap-6">
-            <!-- Slide 1 -->
-            <div class="">
-              <img src="./assets/images/carosel1.svg" alt="Gallery Image 1"
-                class="rounded-lg shadow-lg w-[100vh] h-auto">
-            </div>
-            <!-- Slide 2 -->
-            <div class="">
-              <img src="./assets/images/carosel1.svg" alt="Gallery Image 2"
-                class="rounded-lg shadow-lg w-[100vh] h-auto">
-            </div>
-            <!-- Slide 3 -->
-            <div class="">
-              <img src="./assets/images/carosel1.svg" alt="Gallery Image 3"
-                class="rounded-lg shadow-lg w-[100vh] h-auto">
-            </div>
-            <!-- Slide 4 -->
-            <div class="">
-              <img src="./assets/images/carosel1.svg" alt="Gallery Image 4"
-                class="rounded-lg shadow-lg w-[100vh] h-auto">
-            </div>
+    <section class="relative overflow-hidden h-screen">
+      <!-- Scrolling Rows -->
+      <div class="absolute inset-0 flex flex-col justify-center">
+        <!-- Row 1: Scrolling Left -->
+        <div class="relative w-full overflow-hidden">
+          <div class="flex space-x-8 sm:space-x-12 animate-scroll-left">
+            <img src="./assets/images/carosel1.svg" alt="Image 1"
+              class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+            <img src="./assets/images/carosel1.svg" alt="Image 2"
+              class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+            <img src="./assets/images/carosel1.svg" alt="Image 3"
+              class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+            <img src="./assets/images/carosel1.svg" alt="Image 4"
+              class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+            <img src="./assets/images/carosel1.svg" alt="Image 5"
+              class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
           </div>
         </div>
-
+  
+        </div>
       </div>
     </section>
-    <section class="py-12">
+    <section class="">
       <div class="container mx-auto flex flex-wrap items-center justify-between">
         <!-- Left Side: Image Stack -->
         <div class="flex flex-col items-start space-y-6 w-full lg:w-1/2">
@@ -176,11 +213,11 @@
         <h1 class="text-3xl lg:text-5xl font-semibold">
           One Store for All Kind of Books in <span class="text-yellow-500">KARNATAKA</span>
         </h1>
-        <p class="mt-4 text-lg lg:text-xl font-light">
+        <p class="mt-4 text-lg lg:text-xl text-sm font-light">
           With industry experts and a track record of success with over<br> more than 10+ years of experience. <br>
-          <span class="mt-4 text-lg">From Pre-Nursery to 10th schools students</span>
+          <span class="mt-4 lg:text-lg text-sm">From Pre-Nursery to 10th schools students</span>
         </p>
-        <a href="#" class="mt-4 text-yellow-500 underline font-medium text-lg">View All</a>
+        <a href="#" class="mt-4 text-white p-2 rounded-lg font-medium text-lg bg-yellow-500">View All</a>
       </div>
     </section>
 
@@ -193,16 +230,16 @@
   
           <!-- Right Side: Content -->
           <div class="w-full lg:w-1/2">
-              <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Publish your Books here</h2>
-              <p class="text-gray-700 text-lg mb-4">
+              <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 text-center md:text-left">Publish your Books here</h2>
+              <p class="text-gray-700 text-lg mb-4 text-center md:text-left">
                   Textbooks, notebooks, and all kinds of study materials.
               </p>
-              <p class="text-gray-700 text-lg mb-6">
+              <p class="text-gray-700 text-lg mb-6 text-center md:text-left">
                   Join hands with a trusted publishing and distribution agency that’s shaping the future of education in Karnataka. 
                   Let’s work together to bring knowledge to life!
               </p>
-              <a href="#contact" class="bg-yellow-500 text-white font-medium py-2 px-6 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
-                  Contact Us
+              <a href="#contact" class="bg-yellow-500 text-white font-medium py-2 px-6 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 flex align-center justify-center md:text-left md:text-2xl">
+                    CONTACT US
               </a>
           </div>
       </div>
@@ -225,6 +262,22 @@
 
     // Start scrolling with a smooth interval
     setInterval(autoScroll, 10); // Scroll every 10ms for a smooth effect
+  });
+</script>
+<!-- JavaScript for Hamburger Menu Toggle -->
+<script>
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const sidebar = document.getElementById('sidebar');
+  const closeSidebar = document.getElementById('close-sidebar');
+
+  // Open Sidebar
+  hamburgerIcon.addEventListener('click', () => {
+    sidebar.classList.remove('-translate-x-full');
+  });
+
+  // Close Sidebar
+  closeSidebar.addEventListener('click', () => {
+    sidebar.classList.add('-translate-x-full');
   });
 </script>
 

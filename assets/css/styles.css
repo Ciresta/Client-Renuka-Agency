@@ -4,6 +4,13 @@ body{
     font-family: "Inter", sans-serif;
 }
 
+.inter-thin {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300; /* Regular */
+    font-style: normal;
+  }
+  
 .inter-regular {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -53,3 +60,32 @@ body{
     width: 300px; /* Set a consistent size for the images */
     height: auto;
   }
+
+  
+@keyframes scroll-left {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(100%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 10s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 10s linear infinite;
+} 

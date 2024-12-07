@@ -41,13 +41,19 @@
         <section class="relative">
             <!-- Image Background -->
             <div class="relative">
-                <img src="./assets/images/about.svg" alt="Hero Image" class="w-full h-[700px] object-cover">
-                <!-- Black Overlay -->
-                <div class="absolute inset-0 bg-black opacity-40"></div>
+              <img src="./assets/images/about.svg" alt="Hero Image" class="w-full h-[700px] object-cover">
+              <!-- Black Overlay -->
+              <div class="absolute inset-0 bg-black opacity-40"></div>
+          
+              <!-- Text Overlay -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-white text-5xl lg:text-7xl font-bold uppercase tracking-wide">
+                  About Us
+                </h1>
+              </div>
             </div>
-        </section>
-
-
+          </section>
+          
 
         <!-- Info Section -->
         <section class="bg-[#fffcf3] py-12">
@@ -58,9 +64,9 @@
                 </div>
 
                 <!-- Text Content -->
-                <div class="flex-grow w-full relative right-[100px] lg:w-2/3">
+                <div class="flex-grow w-full relative text-center md:right-[100px] lg:w-2/3">
                     <!-- Heading -->
-                    <h2 class="text-4xl font-bold mb-6 text-center lg:text-left">Mr. Praveen Ronad</h2>
+                    <h2 class="text-4xl font-bold mb-6 text-center md:text-left">Mr. Praveen Ronad</h2>
 
                     <!-- Description -->
                     <p class="text-gray-700 text-2xl leading-relaxed mb-6 text-center lg:text-left">
@@ -73,42 +79,31 @@
         </section>
 
         <!-- Carousel Section -->
-        <section>
-            <h1 class="text-center mb-8">
-                <span class="bg-yellow-600 text-white px-4 py-2 text-4xl font-bold">Our Achievements</span>
-            </h1>
-
-            <div class="container mx-auto px-6">
-
-                <!-- Carousel Wrapper -->
-                <div class="relative overflow-hidden">
-                    <!-- Scroll Container -->
-                    <div id="scroll-carousel" class="flex w-full items-center gap-6">
-                        <!-- Slide 1 -->
-                        <div class="">
-                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 1"
-                                class="rounded-lg shadow-lg w-[100vh] h-auto">
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="">
-                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 2"
-                                class="rounded-lg shadow-lg w-[100vh] h-auto">
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="">
-                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 3"
-                                class="rounded-lg shadow-lg w-[100vh] h-auto">
-                        </div>
-                        <!-- Slide 4 -->
-                        <div class="">
-                            <img src="./assets/images/carosel1.svg" alt="Gallery Image 4"
-                                class="rounded-lg shadow-lg w-[100vh] h-auto">
-                        </div>
+            <section class="relative overflow-hidden h-screen">
+                <h1 class="text-center">
+                    <span class="bg-yellow-600 text-white px-4 py-2 text-4xl font-bold">Our Achievements</span>
+                </h1>
+                <!-- Scrolling Rows -->
+                <div class="absolute inset-0 flex flex-col justify-center">
+                  <!-- Row 1: Scrolling Left -->
+                  <div class="relative w-full overflow-hidden">
+                    <div class="flex space-x-8 sm:space-x-12 animate-scroll-left">
+                      <img src="./assets/images/carosel1.svg" alt="Image 1"
+                        class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+                      <img src="./assets/images/carosel1.svg" alt="Image 2"
+                        class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+                      <img src="./assets/images/carosel1.svg" alt="Image 3"
+                        class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+                      <img src="./assets/images/carosel1.svg" alt="Image 4"
+                        class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
+                      <img src="./assets/images/carosel1.svg" alt="Image 5"
+                        class="w-[300px] sm:w-[600px] h-auto object-cover rounded-lg shadow-md">
                     </div>
+                  </div>
+            
+                  </div>
                 </div>
-
-            </div>
-        </section>
+              </section>
         <section class="bg-gray-50 py-12">
             <div class="container mx-auto px-6">
                 <!-- Section Heading -->
