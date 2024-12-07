@@ -11,27 +11,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="./assets/css/styles.css" rel="stylesheet">
 
+
 </head>
 
 <body class="bg-[#fffcf3]">
   <div class="w-full">
     <!-- Header -->
-    <!-- <header class="bg-gray-900 text-white">
-            <div class="container mx-auto flex justify-between items-center py-4 px-6">
-                <div class="text-lg font-bold flex items-center space-x-2">
-                    <span class="text-xl font-bold">RA</span>
-                    <span>Renuka Agency</span>
-                </div>
-                <nav class="space-x-6">
-                    <a href="#" class="hover:text-yellow-400">Gallery</a>
-                    <a href="#" class="hover:text-yellow-400">About</a>
-                    <a href="#" class="hover:text-yellow-400">Services</a>
-                    <a href="#" class="hover:text-yellow-400">Contact</a>
-                    <a href="#" class="text-yellow-400 font-semibold">Achievements</a>
-                </nav>
-            </div>
-        </header> -->
- <!-- Navbar Section -->
 <!-- Navbar Section -->
 <nav class="bg-black py-4">
   <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -51,11 +36,11 @@
 
     <!-- Navbar Links (For Larger Screens) -->
     <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
-      <li><a href="#" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a></li>
-      <li><a href="#about" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a></li>
-      <li><a href="#gallery" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a></li>
-      <li><a href="#books" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a></li>
-      <li><a href="#contact" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a></li>
+      <li><a href="/" class="text-[#F14F04] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a></li>
+      <li><a href="about.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a></li>
+      <li><a href="gallery.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a></li>
+      <li><a href="books.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a></li>
+      <li><a href="contact.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -72,11 +57,11 @@
 
     <!-- Sidebar Links -->
     <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
-      <li><a href="#" class="hover:text-yellow-500 transition-all">Home</a></li>
-      <li><a href="#about" class="hover:text-yellow-500 transition-all">About</a></li>
-      <li><a href="#gallery" class="hover:text-yellow-500 transition-all">Gallery</a></li>
-      <li><a href="#books" class="hover:text-yellow-500 transition-all">Books</a></li>
-      <li><a href="#contact" class="hover:text-yellow-500 transition-all">Contact</a></li>
+      <li><a href="/" class="text-[#F14F04] hover:text-yellow-500 transition-all">Home</a></li>
+      <li><a href="about.html" class="hover:text-yellow-500 transition-all">About</a></li>
+      <li><a href="gallery.html" class="hover:text-yellow-500 transition-all">Gallery</a></li>
+      <li><a href="books.html" class="hover:text-yellow-500 transition-all">Books</a></li>
+      <li><a href="contact.html" class="hover:text-yellow-500 transition-all">Contact</a></li>
     </ul>
   </div>
 </div>
@@ -265,20 +250,7 @@
   });
 </script>
 <!-- JavaScript for Hamburger Menu Toggle -->
-<script>
-  const hamburgerIcon = document.getElementById('hamburger-icon');
-  const sidebar = document.getElementById('sidebar');
-  const closeSidebar = document.getElementById('close-sidebar');
 
-  // Open Sidebar
-  hamburgerIcon.addEventListener('click', () => {
-    sidebar.classList.remove('-translate-x-full');
-  });
-
-  // Close Sidebar
-  closeSidebar.addEventListener('click', () => {
-    sidebar.classList.add('-translate-x-full');
-  });
-</script>
+<script src="./assets/js/script.js"></script>
 
 </html>

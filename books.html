@@ -20,22 +20,55 @@
 
 <body class="bg-[#fffcf3]">
     <div class="w-full">
-        <!-- Header -->
-        <!-- <header class="bg-gray-900 text-white">
-            <div class="container mx-auto flex justify-between items-center py-4 px-6">
-                <div class="text-lg font-bold flex items-center space-x-2">
-                    <span class="text-xl font-bold">RA</span>
-                    <span>Renuka Agency</span>
-                </div>
-                <nav class="space-x-6">
-                    <a href="#" class="hover:text-yellow-400">Gallery</a>
-                    <a href="#" class="hover:text-yellow-400">About</a>
-                    <a href="#" class="hover:text-yellow-400">Services</a>
-                    <a href="#" class="hover:text-yellow-400">Contact</a>
-                    <a href="#" class="text-yellow-400 font-semibold">Achievements</a>
-                </nav>
-            </div>
-        </header> -->
+<!-- Navbar Section -->
+<nav class="bg-black py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo Section -->
+      <div class="md:flex-shrink-0">
+        <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+      </div>
+  
+      <!-- Hamburger Icon -->
+      <div class="block lg:hidden p-2">
+        <button id="hamburger-icon" class="text-white focus:outline-none">
+          <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+  
+      <!-- Navbar Links (For Larger Screens) -->
+      <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
+        <li><a href="/" class=" hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a></li>
+        <li><a href="about.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a></li>
+        <li><a href="gallery.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a></li>
+        <li><a href="books.html" class="text-[#F14F04] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a></li>
+        <li><a href="contact.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed z-10 inset-0 bg-black bg-opacity-70 text-white transform -translate-x-full transition-transform duration-300">
+    <div class="p-6">
+      <!-- Close Button -->
+      <button id="close-sidebar" class="text-white focus:outline-none absolute top-4 right-6">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+  
+      <!-- Sidebar Links -->
+      <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
+        <li><a href="/" class=" hover:text-yellow-500 transition-all">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-500 transition-all">About</a></li>
+        <li><a href="gallery.html" class="hover:text-yellow-500 transition-all">Gallery</a></li>
+        <li><a href="books.html" class="text-[#F14F04] hover:text-yellow-500 transition-all">Books</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-500 transition-all">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  
 
         <!-- Hero Section -->
         <section class="relative">
@@ -284,5 +317,7 @@
 
     </div>
 </body>
+<script src="./assets/js/script.js"></script>
+
 
 </html>
