@@ -15,62 +15,125 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            /* background-color: #fff; */
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+        }
+
+        .carousel {
+            display: flex;
+            gap: 10px; /* Spacing between items */
+            animation: scroll 130s linear infinite; /* Continuous scrolling animation */
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 400px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image fits the container without distortion */
+        }
+
+        /* Keyframes for the marquee-like animation */
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
     </style>
 </head>
 
 <body class="bg-[#fffcf3]">
+    <div id="preloader">
+        <img src="assets/images/ra-white.png" alt="Loading..." />
+    </div>
     <div class="w-full">
-<!-- Navbar Section -->
-<nav class="bg-black py-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <!-- Logo Section -->
-      <a href="/">
-        <div class="md:flex-shrink-0">
-            <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+        <!-- Navbar Section -->
+        <nav class="bg-black py-4">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <!-- Logo Section -->
+                <a href="/">
+                    <div class="md:flex-shrink-0">
+                        <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+                    </div>
+                </a>
+
+                <!-- Hamburger Icon -->
+                <div class="block lg:hidden p-2">
+                    <button id="hamburger-icon" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navbar Links (For Larger Screens) -->
+                <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
+                    <li><a href="/"
+                            class=" hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a>
+                    </li>
+                    <li><a href="about.html"
+                            class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a>
+                    </li>
+                    <li><a href="gallery.html"
+                            class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a>
+                    </li>
+                    <li><a href="books.html"
+                            class="text-[#F14F04] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a>
+                    </li>
+                    <li><a href="contact.html"
+                            class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <div id="sidebar"
+            class="fixed z-10 inset-0 bg-black bg-opacity-70 text-white transform -translate-x-full transition-transform duration-300">
+            <div class="p-6">
+                <!-- Close Button -->
+                <button id="close-sidebar" class="text-white focus:outline-none absolute top-4 right-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Sidebar Links -->
+                <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
+                    <li><a href="/" class=" hover:text-yellow-500 transition-all">Home</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-500 transition-all">About</a></li>
+                    <li><a href="gallery.html" class="hover:text-yellow-500 transition-all">Gallery</a></li>
+                    <li><a href="books.html" class="text-[#F14F04] hover:text-yellow-500 transition-all">Books</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-500 transition-all">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </a>
-  
-      <!-- Hamburger Icon -->
-      <div class="block lg:hidden p-2">
-        <button id="hamburger-icon" class="text-white focus:outline-none">
-          <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-  
-      <!-- Navbar Links (For Larger Screens) -->
-      <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
-        <li><a href="/" class=" hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a></li>
-        <li><a href="about.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a></li>
-        <li><a href="gallery.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a></li>
-        <li><a href="books.html" class="text-[#F14F04] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a></li>
-        <li><a href="contact.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <!-- Sidebar -->
-  <div id="sidebar" class="fixed z-10 inset-0 bg-black bg-opacity-70 text-white transform -translate-x-full transition-transform duration-300">
-    <div class="p-6">
-      <!-- Close Button -->
-      <button id="close-sidebar" class="text-white focus:outline-none absolute top-4 right-6">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-  
-      <!-- Sidebar Links -->
-      <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
-        <li><a href="/" class=" hover:text-yellow-500 transition-all">Home</a></li>
-        <li><a href="about.html" class="hover:text-yellow-500 transition-all">About</a></li>
-        <li><a href="gallery.html" class="hover:text-yellow-500 transition-all">Gallery</a></li>
-        <li><a href="books.html" class="text-[#F14F04] hover:text-yellow-500 transition-all">Books</a></li>
-        <li><a href="contact.html" class="hover:text-yellow-500 transition-all">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  
+
 
         <!-- Hero Section -->
         <section class="relative">
@@ -90,17 +153,17 @@
             </div>
         </section>
         <section
-        style="background-image: url('./assets/images/booksbg.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <div class="flex flex-col items-center justify-center py-8 px-4">
-            <p class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center py-8">New Rays Books</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Book 1 -->
-                <div class="flex relative">
-                    <img src="./assets/images/books/book1.svg" alt="Book 1" 
-                         class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
-                    <div>
-                        <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
-                            style="
+            style="background-image: url('./assets/images/booksbg.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <div class="flex flex-col items-center justify-center py-8 px-4">
+                <p class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center py-8">New Rays Books</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Book 1 -->
+                    <div class="flex relative">
+                        <img src="./assets/images/books/book1.svg" alt="Book 1"
+                            class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
+                        <div>
+                            <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
+                                style="
                             background: rgba(255, 255, 255); 
                             border-radius: 0 10px 10px 0px; 
                             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -108,23 +171,25 @@
                             -webkit-backdrop-filter: blur(5px); 
                             border: 1px solid rgba(255, 255, 255, 0.3);
                         ">
-                            <div class="text-left">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of Book 1</h3>
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of
+                                        Book 1</h3>
+                                </div>
+                            </div>
+                            <div class="w-48 sm:w-56 lg:w-64 p-4">
+                                <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Delectus, at.</p>
                             </div>
                         </div>
-                        <div class="w-48 sm:w-56 lg:w-64 p-4">
-                            <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at.</p>
-                        </div>
                     </div>
-                </div>
-    
-                <!-- Book 2 -->
-                <div class="flex relative">
-                    <img src="./assets/images/books/book1.svg" alt="Book 2" 
-                         class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
-                    <div>
-                        <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
-                            style="
+
+                    <!-- Book 2 -->
+                    <div class="flex relative">
+                        <img src="./assets/images/books/book1.svg" alt="Book 2"
+                            class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
+                        <div>
+                            <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
+                                style="
                             background: rgba(255, 255, 255); 
                             border-radius: 0 10px 10px 0px; 
                             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -132,22 +197,24 @@
                             -webkit-backdrop-filter: blur(5px); 
                             border: 1px solid rgba(255, 255, 255, 0.3);
                         ">
-                            <div class="text-left">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of Book 2</h3>
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of
+                                        Book 2</h3>
+                                </div>
+                            </div>
+                            <div class="w-48 sm:w-56 lg:w-64 p-4">
+                                <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Delectus, at.</p>
                             </div>
                         </div>
-                        <div class="w-48 sm:w-56 lg:w-64 p-4">
-                            <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at.</p>
-                        </div>
                     </div>
-                </div>
-                <!-- Book 2 -->
-                <div class="flex relative">
-                    <img src="./assets/images/books/book1.svg" alt="Book 2" 
-                         class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
-                    <div>
-                        <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
-                            style="
+                    <!-- Book 2 -->
+                    <div class="flex relative">
+                        <img src="./assets/images/books/book1.svg" alt="Book 2"
+                            class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
+                        <div>
+                            <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
+                                style="
                             background: rgba(255, 255, 255); 
                             border-radius: 0 10px 10px 0px; 
                             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -155,22 +222,24 @@
                             -webkit-backdrop-filter: blur(5px); 
                             border: 1px solid rgba(255, 255, 255, 0.3);
                         ">
-                            <div class="text-left">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of Book 2</h3>
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of
+                                        Book 2</h3>
+                                </div>
+                            </div>
+                            <div class="w-48 sm:w-56 lg:w-64 p-4">
+                                <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Delectus, at.</p>
                             </div>
                         </div>
-                        <div class="w-48 sm:w-56 lg:w-64 p-4">
-                            <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at.</p>
-                        </div>
                     </div>
-                </div>
-                <!-- Book 2 -->
-                <div class="flex relative">
-                    <img src="./assets/images/books/book1.svg" alt="Book 2" 
-                         class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
-                    <div>
-                        <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
-                            style="
+                    <!-- Book 2 -->
+                    <div class="flex relative">
+                        <img src="./assets/images/books/book1.svg" alt="Book 2"
+                            class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
+                        <div>
+                            <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
+                                style="
                             background: rgba(255, 255, 255); 
                             border-radius: 0 10px 10px 0px; 
                             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -178,22 +247,24 @@
                             -webkit-backdrop-filter: blur(5px); 
                             border: 1px solid rgba(255, 255, 255, 0.3);
                         ">
-                            <div class="text-left">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of Book 2</h3>
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of
+                                        Book 2</h3>
+                                </div>
+                            </div>
+                            <div class="w-48 sm:w-56 lg:w-64 p-4">
+                                <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Delectus, at.</p>
                             </div>
                         </div>
-                        <div class="w-48 sm:w-56 lg:w-64 p-4">
-                            <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at.</p>
-                        </div>
                     </div>
-                </div>
-                <!-- Book 2 -->
-                <div class="flex relative">
-                    <img src="./assets/images/books/book1.svg" alt="Book 2" 
-                         class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
-                    <div>
-                        <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
-                            style="
+                    <!-- Book 2 -->
+                    <div class="flex relative">
+                        <img src="./assets/images/books/book1.svg" alt="Book 2"
+                            class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
+                        <div>
+                            <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
+                                style="
                             background: rgba(255, 255, 255); 
                             border-radius: 0 10px 10px 0px; 
                             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -201,22 +272,24 @@
                             -webkit-backdrop-filter: blur(5px); 
                             border: 1px solid rgba(255, 255, 255, 0.3);
                         ">
-                            <div class="text-left">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of Book 2</h3>
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of
+                                        Book 2</h3>
+                                </div>
+                            </div>
+                            <div class="w-48 sm:w-56 lg:w-64 p-4">
+                                <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Delectus, at.</p>
                             </div>
                         </div>
-                        <div class="w-48 sm:w-56 lg:w-64 p-4">
-                            <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at.</p>
-                        </div>
                     </div>
-                </div>
-                <!-- Book 2 -->
-                <div class="flex relative">
-                    <img src="./assets/images/books/book1.svg" alt="Book 2" 
-                         class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
-                    <div>
-                        <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
-                            style="
+                    <!-- Book 2 -->
+                    <div class="flex relative">
+                        <img src="./assets/images/books/book1.svg" alt="Book 2"
+                            class="w-[180px] h-[240px] sm:w-[200px] sm:h-[270px] lg:w-[240px] lg:h-[310px]" />
+                        <div>
+                            <div class="bg-white/20 backdrop-blur-md p-4 w-auto h-[60px] sm:h-[70px] lg:h-[80px] shadow-lg ml-0 rounded-lg flex items-center justify-start"
+                                style="
                             background: rgba(255, 255, 255); 
                             border-radius: 0 10px 10px 0px; 
                             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -224,21 +297,23 @@
                             -webkit-backdrop-filter: blur(5px); 
                             border: 1px solid rgba(255, 255, 255, 0.3);
                         ">
-                            <div class="text-left">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of Book 2</h3>
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl text-black font-bold mb-2">Full Name of
+                                        Book 2</h3>
+                                </div>
+                            </div>
+                            <div class="w-48 sm:w-56 lg:w-64 p-4">
+                                <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Delectus, at.</p>
                             </div>
                         </div>
-                        <div class="w-48 sm:w-56 lg:w-64 p-4">
-                            <p class="text-xs sm:text-sm lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at.</p>
-                        </div>
                     </div>
+
+                    <!-- Repeat similarly for other books -->
                 </div>
-    
-                <!-- Repeat similarly for other books -->
             </div>
-        </div>
-    </section>
-    
+        </section>
+
 
         <section>
             <div class="bg-yellow-500 text-center p-8">
@@ -250,138 +325,305 @@
         </section>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 m-12">
             <!-- Yellow Box 1 -->
+            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
+                <div class="w-64 h-64 flex items-center justify-center">
+                    <img src="./assets/images/customized/trophy.png" alt="Icon 1" class="max-w-full max-h-full" />
+                </div>
+                <h3 class="text-xl font-bold text-black mt-4">Trophies</h3>
+                <p class="text-center text-black mt-2">Customized trophies to celebrate achievements with a personal touch.</p>
+            </div>
+        
+            <!-- Yellow Box 2 -->
+            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
+                <div class="w-64 h-64 flex items-center justify-center">
+                    <img src="./assets/images/customized/bag.png" alt="Icon 2" class="max-w-full max-h-full" />
+                </div>
+                <h3 class="text-xl font-bold text-black mt-4">Bag</h3>
+                <p class="text-center text-black mt-2">Stylish, functional bags tailored to your preferences.</p>
+            </div>
+        
+            <!-- Yellow Box 3 -->
+            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
+                <div class="w-64 h-64 flex items-center justify-center">
+                    <img src="./assets/images/customized/shoes.png" alt="Icon 3" class="max-w-full max-h-full" />
+                </div>
+                <h3 class="text-xl font-bold text-black mt-4">Shoes</h3>
+                <p class="text-center text-black mt-2">Unique, personalized shoes for every occasion.</p>
+            </div>
+        
+            <!-- Yellow Box 4 -->
+            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
+                <div class="w-64 h-64 flex items-center justify-center">
+                    <img src="./assets/images/customized/book.png" alt="Icon 4" class="max-w-full max-h-full" />
+                </div>
+                <h3 class="text-xl font-bold text-black mt-4">Books</h3>
+                <p class="text-center text-black mt-2">Customized books for journaling, gifting, or daily use.</p>
+            </div>
+        
+            <!-- Yellow Box 5 -->
+            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
+                <div class="w-64 h-64 flex items-center justify-center">
+                    <img src="./assets/images/customized/stationary.png" alt="Icon 5" class="max-w-full max-h-full" />
+                </div>
+                <h3 class="text-xl font-bold text-black mt-4">Stationery</h3>
+                <p class="text-center text-black mt-2">Personalized stationery for work, school, or special moments.</p>
+            </div>
+        
             <!-- Yellow Box 6 -->
             <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
-                <img src="./assets/images/sports.png" alt="Icon 6" class="w-64 h-auto mb-4 -mt-16" />
-                <h3 class="text-xl font-bold text-black">Box 6 Title</h3>
-                <p class="text-center text-black mt-2">This is a description for box 6.</p>
+                <div class="w-64 h-64 flex items-center justify-center">
+                    <img src="./assets/images/sports.png" alt="Icon 6" class="max-w-full max-h-full" />
+                </div>
+                <h3 class="text-xl font-bold text-black mt-4">Blank</h3>
+                <p class="text-center text-black mt-2">Not decided</p>
             </div>
-            <!-- Yellow Box 6 -->
-            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
-                <img src="./assets/images/sports.png" alt="Icon 6" class="w-64 h-auto mb-4 -mt-16" />
-                <h3 class="text-xl font-bold text-black">Box 6 Title</h3>
-                <p class="text-center text-black mt-2">This is a description for box 6.</p>
-            </div>
-
-            <!-- Yellow Box 6 -->
-            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
-                <img src="./assets/images/sports.png" alt="Icon 6" class="w-64 h-auto mb-4 -mt-16" />
-                <h3 class="text-xl font-bold text-black">Box 6 Title</h3>
-                <p class="text-center text-black mt-2">This is a description for box 6.</p>
-            </div>
-
-            <!-- Yellow Box 6 -->
-            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
-                <img src="./assets/images/sports.png" alt="Icon 6" class="w-64 h-auto mb-4 -mt-16" />
-                <h3 class="text-xl font-bold text-black">Box 6 Title</h3>
-                <p class="text-center text-black mt-2">This is a description for box 6.</p>
-            </div>
-
-            <!-- Yellow Box 6 -->
-            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
-                <img src="./assets/images/sports.png" alt="Icon 6" class="w-64 h-auto mb-4 -mt-16" />
-                <h3 class="text-xl font-bold text-black">Box 6 Title</h3>
-                <p class="text-center text-black mt-2">This is a description for box 6.</p>
-            </div>
-            <!-- Yellow Box 6 -->
-            <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center relative">
-                <img src="./assets/images/sports.png" alt="Icon 6" class="w-64 h-auto mb-4 -mt-16" />
-                <h3 class="text-xl font-bold text-black">Box 6 Title</h3>
-                <p class="text-center text-black mt-2">This is a description for box 6.</p>
-            </div>
+        </div>
+        
 
 
         </div>
-<!-- Grey Box Section -->
-<section class="mt-16">
-    <div class="relative bg-gray-300 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg max-w-5xl mx-auto">
-        <!-- Text Content in the Center -->
-        <div class="text-center z-10">
-            <h3 class="text-sm sm:text-2xl font-italic text-gray-600">Authorized distributor</h3>
-            <p class="text-sm sm:text-3xl lg:text-4xl font-bold text-black mt-2">For NCERT Study materials</p>
-            <p class="text-xs sm:text-sm lg:text-base text-black mt-2">From 1st to 12th</p>
+        <div class="carousel-container bg-[#fffcf3]">
+            <div class="carousel">
+                <!-- Add images dynamically -->
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0011.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0012.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0013.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0014.jpg" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0015.jpg" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0016.jpg" alt="Image 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0017.jpg" alt="Image 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0018.jpg" alt="Image 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0019.jpg" alt="Image 9">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0011.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0012.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0013.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0014.jpg" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0015.jpg" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0016.jpg" alt="Image 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0017.jpg" alt="Image 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0018.jpg" alt="Image 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0019.jpg" alt="Image 9">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0011.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0012.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0013.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0014.jpg" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0015.jpg" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0016.jpg" alt="Image 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0017.jpg" alt="Image 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0018.jpg" alt="Image 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0019.jpg" alt="Image 9">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0011.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0012.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0013.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0014.jpg" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0015.jpg" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0016.jpg" alt="Image 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0017.jpg" alt="Image 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0018.jpg" alt="Image 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0019.jpg" alt="Image 9">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0011.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0012.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0013.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0014.jpg" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0015.jpg" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0016.jpg" alt="Image 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0017.jpg" alt="Image 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0018.jpg" alt="Image 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/images/carosel/IMG-20250104-WA0019.jpg" alt="Image 9">
+                </div>
+            </div>
         </div>
+        
+            <!-- Navigation Buttons -->
+            <button id="prev-btn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700">
+                Prev
+            </button>
+            <button id="next-btn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700">
+                Next
+            </button>
+        </div>
+        
+        <!-- Grey Box Section -->
+        <section class="mt-16">
+            <div class="relative bg-gray-300 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg max-w-5xl mx-auto">
+                <!-- Text Content in the Center -->
+                <div class="text-center z-10">
+                    <h3 class="text-sm sm:text-2xl font-italic text-gray-600">Authorized distributor</h3>
+                    <p class="text-sm sm:text-3xl lg:text-4xl font-bold text-black mt-2">For NCERT Study materials</p>
+                    <p class="text-xs sm:text-sm lg:text-base text-black mt-2">From 1st to 12th</p>
+                </div>
 
-        <!-- Images on the Left and Right -->
-        <img
-            src="./assets/images/manybooks.svg"
-            alt="Left Image"
-            class="absolute left-[-20px] sm:left-[-30px] top-1/2 transform -translate-y-1/2 w-24 sm:w-40 lg:w-64 h-auto"
-        />
-        <img
-            src="./assets/images/ncertlogo.svg"
-            alt="Right Image"
-            class="absolute right-[20px] sm:right-[30px] top-1/2 transform -translate-y-1/2 w-16 sm:w-24 lg:w-32 h-auto"
-        />
-    </div>
-</section>
-<footer class="text-white py-10 bg-black bg-cover bg-no-repeat bg-center"
-style="background-image: url(./assets/images/footer-bg.svg);">
-<div class="container mx-auto px-6 lg:px-20">
-  <!-- Footer Top -->
-  <div class="flex flex-wrap justify-between">
-    <!-- Company Info Section -->
-    <div class="w-full md:w-1/3 mb-8 md:mb-0">
-      <div class="md:flex-shrink-0">
-        <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
-      </div>
-      <img src="./assets/images/QRCode.svg" alt="QR Code" class="h-32 mt-4">
-      <!-- Social Media Icons -->
-      <div class="flex space-x-6 mt-4">
-        <a href="#" class="text-gray-400 hover:text-white">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
+                <!-- Images on the Left and Right -->
+                <img src="./assets/images/manybooks.svg" alt="Left Image"
+                    class="absolute left-[-20px] sm:left-[-30px] top-1/2 transform -translate-y-1/2 w-24 sm:w-40 lg:w-64 h-auto" />
+                <img src="./assets/images/ncertlogo.svg" alt="Right Image"
+                    class="absolute right-[20px] sm:right-[30px] top-1/2 transform -translate-y-1/2 w-16 sm:w-24 lg:w-32 h-auto" />
+            </div>
+        </section>
+        <footer class="text-white py-10 bg-black bg-cover bg-no-repeat bg-center"
+            style="background-image: url(./assets/images/footer-bg.svg);">
+            <div class="container mx-auto px-6 lg:px-20">
+                <!-- Footer Top -->
+                <div class="flex flex-wrap justify-between">
+                    <!-- Company Info Section -->
+                    <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                        <div class="md:flex-shrink-0">
+                            <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+                        </div>
+                        <img src="./assets/images/QRCode.svg" alt="QR Code" class="h-32 mt-4">
+                        <!-- Social Media Icons -->
+                        <div class="flex space-x-6 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
 
-    <!-- Quick Links Section -->
-    <div class="w-full md:w-1/3 mb-8 md:mb-0">
-      <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
-      <ul class="space-y-2">
-        <li><a href="/" class="text-sm hover:text-gray-400">Home</a></li>
-        <li><a href="about.html" class="text-sm hover:text-gray-400">About</a></li>
-        <li><a href="gallery.html" class="text-sm hover:text-gray-400">Gallery</a></li>
-        <li><a href="books.html" class="text-sm hover:text-gray-400">Books</a></li>
-        <li><a href="contact.html" class="text-sm hover:text-gray-400">Contact</a></li>
-      </ul>
-    </div>
+                    <!-- Quick Links Section -->
+                    <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="/" class="text-sm hover:text-gray-400">Home</a></li>
+                            <li><a href="about.html" class="text-sm hover:text-gray-400">About</a></li>
+                            <li><a href="gallery.html" class="text-sm hover:text-gray-400">Gallery</a></li>
+                            <li><a href="books.html" class="text-sm hover:text-gray-400">Books</a></li>
+                            <li><a href="contact.html" class="text-sm hover:text-gray-400">Contact</a></li>
+                        </ul>
+                    </div>
 
-    <!-- Location & Contact Section -->
-    <div class="w-full md:w-1/3">
-      <h3 class="text-lg font-semibold mb-3">Location</h3>
-      <p class="text-sm">
-        Behind J.G. Commerce College Hostel, <br>
-        Hosur-Unkal Bypass Road, <br>
-        Near New Court, Vidyanagar, <br>
-        Hubballi-580 021, Karnataka
-      </p>
-      <p class="text-sm mt-2">Email: <a href="mailto:renukaagency003@gmail.com" class="hover:text-gray-400">renukaagency003@gmail.com</a></p>
-      <p class="text-sm">Phone: (123) 456-7890</p>
-    </div>
-  </div>
+                    <!-- Location & Contact Section -->
+                    <div class="w-full md:w-1/3">
+                        <h3 class="text-lg font-semibold mb-3">Location</h3>
+                        <p class="text-sm">
+                            Behind J.G. Commerce College Hostel, <br>
+                            Hosur-Unkal Bypass Road, <br>
+                            Near New Court, Vidyanagar, <br>
+                            Hubballi-580 021, Karnataka
+                        </p>
+                        <p class="text-sm mt-2">Email: <a href="mailto:renukaagency003@gmail.com"
+                                class="hover:text-gray-400">renukaagency003@gmail.com</a></p>
+                        <p class="text-sm">Phone: (123) 456-7890</p>
+                    </div>
+                </div>
 
-  <!-- Footer Bottom -->
-  <div class="mt-10 flex flex-col md:flex-row items-center justify-between border-t pt-6">
-    <div class="flex items-center space-x-2 mb-4 md:mb-0">
-      <img src="./assets/images/ciresta-logo.svg" alt="Logo" class="h-6">
-      <a href="https://www.ciresta.in" target="_blank">
-        <span class="text-sm text-[#6a6a71]">Powered by Ciresta Technologies</span>
-      </a>
+                <!-- Footer Bottom -->
+                <div class="mt-10 flex flex-col md:flex-row items-center justify-between border-t pt-6">
+                    <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                        <img src="./assets/images/ciresta-logo.svg" alt="Logo" class="h-6">
+                        <a href="https://www.ciresta.in" target="_blank">
+                            <span class="text-sm text-[#6a6a71]">Powered by Ciresta Technologies</span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-center md:text-right">&copy; 2024 Renuka Agency. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <p class="text-sm text-center md:text-right">&copy; 2024 Renuka Agency. All Rights Reserved.</p>
-  </div>
-</div>
-</footer>
-    </div>
+    <script>
+        // Hide preloader after page loads
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none'; // Hide preloader
+        });
+    </script>
 </body>
 <script src="./assets/js/script.js"></script>
 

@@ -15,15 +15,20 @@
 </head>
 
 <body class="bg-[#fffcf3]">
+  <!-- Preloader -->
+<div id="preloader">
+  <img src="assets/images/ra-white.png" alt="Loading..." />
+</div>
+
   <div class="w-full">
     <!-- Header -->
     <!-- Navbar Section -->
-    <nav class="bg-black py-4">
+    <nav class="bg-[#272727] py-4">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <!-- Logo Section -->
         <a href="/">
           <div class="md:flex-shrink-0">
-            <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+            <img src="./assets/images/ra-white.png" alt="Logo" class="h-16">
           </div>
         </a>
 
@@ -50,6 +55,10 @@
           </li>
           <li><a href="books.html"
               class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a>
+          </li>
+          </li>
+          <li><a href="books.html"
+              class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Publications</a>
           </li>
           <li><a href="contact.html"
               class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a>
@@ -332,6 +341,14 @@
 
 
   </div>
+  <script>
+    // Hide preloader after page loads
+    window.addEventListener('load', function () {
+        const preloader = document.getElementById('preloader');
+        preloader.style.display = 'none'; // Hide preloader
+    });
+</script>
+
 </body>
 <script>
   document.addEventListener('DOMContentLoaded', () => {

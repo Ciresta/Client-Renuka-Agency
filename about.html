@@ -13,6 +13,9 @@
 </head>
 
 <body class="bg-[#fffcf3]">
+    <div id="preloader">
+        <img src="assets/images/ra-white.png" alt="Loading..." />
+      </div>
     <div class="w-full">
         <!-- Header -->
         <!-- Navbar Section -->
@@ -245,6 +248,13 @@
       
 
     </div>
+    <script>
+        // Hide preloader after page loads
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none'; // Hide preloader
+        });
+    </script>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {

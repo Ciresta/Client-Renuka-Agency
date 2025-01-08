@@ -2,152 +2,164 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renuka Agency</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="./assets/css/styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renuka Agency</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="./assets/css/styles.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
 
 <body class="bg-[#fffcf3]">
-    <div class="w-full">
-        <!-- Header -->
-<!-- Navbar Section -->
-<nav class="bg-black py-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <!-- Logo Section -->
-      <a href="/">
-        <div class="md:flex-shrink-0">
+  <div id="preloader">
+    <img src="assets/images/ra-white.png" alt="Loading..." />
+  </div>
+  <div class="w-full">
+    <!-- Header -->
+    <!-- Navbar Section -->
+    <nav class="bg-black py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo Section -->
+        <a href="/">
+          <div class="md:flex-shrink-0">
             <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
+          </div>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <div class="block lg:hidden p-2">
+          <button id="hamburger-icon" class="text-white focus:outline-none">
+            <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
-    </a>
-  
-      <!-- Hamburger Icon -->
-      <div class="block lg:hidden p-2">
-        <button id="hamburger-icon" class="text-white focus:outline-none">
-          <svg class="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+
+        <!-- Navbar Links (For Larger Screens) -->
+        <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
+          <li><a href="/"
+              class=" hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a>
+          </li>
+          <li><a href="about.html"
+              class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a>
+          </li>
+          <li><a href="gallery.html"
+              class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a>
+          </li>
+          <li><a href="books.html"
+              class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a>
+          </li>
+          <li><a href="contact.html"
+              class="text-[#F14F04] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar"
+      class="fixed z-10 inset-0 bg-black bg-opacity-70 text-white transform -translate-x-full transition-transform duration-300">
+      <div class="p-6">
+        <!-- Close Button -->
+        <button id="close-sidebar" class="text-white focus:outline-none absolute top-4 right-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
+
+        <!-- Sidebar Links -->
+        <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
+          <li><a href="/" class=" hover:text-yellow-500 transition-all">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-500 transition-all">About</a></li>
+          <li><a href="gallery.html" class="hover:text-yellow-500 transition-all">Gallery</a></li>
+          <li><a href="books.html" class="hover:text-yellow-500 transition-all">Books</a></li>
+          <li><a href="contact.html" class="text-[#F14F04] hover:text-yellow-500 transition-all">Contact</a></li>
+        </ul>
       </div>
-  
-      <!-- Navbar Links (For Larger Screens) -->
-      <ul class="hidden lg:flex space-x-10 inter-thin text-white text-lg font-inter">
-        <li><a href="/" class=" hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Home</a></li>
-        <li><a href="about.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">About</a></li>
-        <li><a href="gallery.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Gallery</a></li>
-        <li><a href="books.html" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Books</a></li>
-        <li><a href="contact.html" class="text-[#F14F04] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F14F04] hover:to-[#FF9933] px-4 py-2">Contact</a></li>
-      </ul>
     </div>
-  </nav>
-  
-  <!-- Sidebar -->
-  <div id="sidebar" class="fixed z-10 inset-0 bg-black bg-opacity-70 text-white transform -translate-x-full transition-transform duration-300">
-    <div class="p-6">
-      <!-- Close Button -->
-      <button id="close-sidebar" class="text-white focus:outline-none absolute top-4 right-6">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-  
-      <!-- Sidebar Links -->
-      <ul class="flex flex-col space-y-6 mt-10 text-lg inter-thin align-center items-center text-center">
-        <li><a href="/" class=" hover:text-yellow-500 transition-all">Home</a></li>
-        <li><a href="about.html" class="hover:text-yellow-500 transition-all">About</a></li>
-        <li><a href="gallery.html" class="hover:text-yellow-500 transition-all">Gallery</a></li>
-        <li><a href="books.html" class="hover:text-yellow-500 transition-all">Books</a></li>
-        <li><a href="contact.html" class="text-[#F14F04] hover:text-yellow-500 transition-all">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  
-          
-  
-        <!-- Hero Section -->
-        <section class="relative">
-            <div class="relative">
-                <img src="./assets/images/about.svg" alt="Hero Image" class="w-full h-[700px] object-cover">
-                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div class="absolute inset-0 flex flex-col justify-center text-left text-white px-6">
-                    <h1 class="text-5xl inter-thin mt-4 py-2">
-                        <span class="inter-regular text-[#C9C9C9]">Order Books for your <br><span
-                                class="text-white font-bold">schools</span><span class="font-light"> and</span> <span
-                                class="text-white font-bold">shops</span>
-                    </h1>
-                </div>
+
+
+
+
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="relative">
+        <img src="./assets/images/about.svg" alt="Hero Image" class="w-full h-[700px] object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 flex flex-col justify-center text-left text-white px-6">
+          <h1 class="text-5xl inter-thin mt-4 py-2">
+            <span class="inter-regular text-[#C9C9C9]">Order Books for your <br><span
+                class="text-white font-bold">schools</span><span class="font-light"> and</span> <span
+                class="text-white font-bold">shops</span>
+          </h1>
+        </div>
+      </div>
+    </section>
+    <section class="w-full min-h-screen flex flex-col md:flex-row">
+      <!-- Form Section -->
+      <div class="w-full md:w-1/2 bg-yellow-500 p-6 md:p-8 flex items-center justify-center">
+        <form class="w-full max-w-md space-y-6">
+          <!-- Intro Text -->
+          <div class="mb-6 md:mb-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-white">Contact Us</h2>
+            <p class="text-sm md:text-lg text-black mt-2">
+              We'd love to hear from you! Please fill out the form below to get in touch with us.
+            </p>
+          </div>
+          <!-- Name Field -->
+          <div>
+            <label for="name" class="block text-white font-medium mb-2">Name</label>
+            <input type="text" id="name" placeholder="Full name" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black 
+                                   focus:ring focus:ring-yellow-300 focus:outline-none">
+          </div>
+          <!-- Purpose Field -->
+          <div>
+            <label for="purpose" class="block text-white font-medium mb-2">Purpose (for shop or school)</label>
+            <input type="text" id="purpose" placeholder="For our institution" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black 
+                                   focus:ring focus:ring-yellow-300 focus:outline-none">
+          </div>
+          <!-- Contact Number Field -->
+          <div>
+            <label for="contact" class="block text-white font-medium mb-2">Your contact number</label>
+            <input type="text" id="contact" placeholder="+91 00000000" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black 
+                                   focus:ring focus:ring-yellow-300 focus:outline-none">
+          </div>
+          <!-- Submit Button -->
+          <div>
+            <button type="submit" class="w-full bg-black text-white rounded-lg py-2 hover:bg-gray-800 
+                                   focus:ring focus:ring-yellow-300 focus:outline-none">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 relative">
+        <img src="./assets/images/contact-side.png" alt="Library" class="w-full h-full object-cover">
+        <div
+          class="absolute inset-0 flex flex-col justify-end p-6 md:p-8 bg-gradient-to-t from-black via-transparent to-transparent">
+          <div class="text-white">
+            <div class="flex items-center text-xl md:text-3xl font-bold">
+              <img src="./assets/images/ra-white.png" alt="Logo" class="w-auto h-5 md:h-6 mr-2">
+              Renuka Agency
             </div>
-        </section>
-        <section class="w-full min-h-screen flex flex-col md:flex-row">
-            <!-- Form Section -->
-            <div class="w-full md:w-1/2 bg-yellow-500 p-6 md:p-8 flex items-center justify-center">
-                <form class="w-full max-w-md space-y-6">
-                    <!-- Intro Text -->
-                    <div class="mb-6 md:mb-8">
-                        <h2 class="text-3xl md:text-5xl font-bold text-white">Contact Us</h2>
-                        <p class="text-sm md:text-lg text-black mt-2">
-                            We'd love to hear from you! Please fill out the form below to get in touch with us.
-                        </p>
-                    </div>
-                    <!-- Name Field -->
-                    <div>
-                        <label for="name" class="block text-white font-medium mb-2">Name</label>
-                        <input type="text" id="name" placeholder="Full name" 
-                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black 
-                                   focus:ring focus:ring-yellow-300 focus:outline-none">
-                    </div>
-                    <!-- Purpose Field -->
-                    <div>
-                        <label for="purpose" class="block text-white font-medium mb-2">Purpose (for shop or school)</label>
-                        <input type="text" id="purpose" placeholder="For our institution" 
-                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black 
-                                   focus:ring focus:ring-yellow-300 focus:outline-none">
-                    </div>
-                    <!-- Contact Number Field -->
-                    <div>
-                        <label for="contact" class="block text-white font-medium mb-2">Your contact number</label>
-                        <input type="text" id="contact" placeholder="+91 00000000" 
-                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-black 
-                                   focus:ring focus:ring-yellow-300 focus:outline-none">
-                    </div>
-                    <!-- Submit Button -->
-                    <div>
-                        <button type="submit" 
-                            class="w-full bg-black text-white rounded-lg py-2 hover:bg-gray-800 
-                                   focus:ring focus:ring-yellow-300 focus:outline-none">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-            </div>
-        
-            <!-- Image Section -->
-            <div class="w-full md:w-1/2 relative">
-                <img src="./assets/images/contact-side.png" alt="Library" class="w-full h-full object-cover">
-                <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8 bg-gradient-to-t from-black via-transparent to-transparent">
-                    <div class="text-white">
-                        <div class="flex items-center text-xl md:text-3xl font-bold">
-                            <img src="./assets/images/ra-white.png" alt="Logo" class="w-auto h-5 md:h-6 mr-2">
-                            Renuka Agency
-                        </div>
-                        <div class="text-sm md:text-lg mt-2">Call - +91 9937824569</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- <section class="py-12 bg-gray-100" style="background-image: url('./assets/images/gallery-bg.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <div class="text-sm md:text-lg mt-2">Call - +91 9937824569</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="py-12 bg-gray-100" style="background-image: url('./assets/images/gallery-bg.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
                 <div class="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-start" >
 
                 <div class="md:w-2/3">
@@ -186,90 +198,98 @@
                 </div>
             </div>
         </section> -->
-        <footer class="text-white py-10 bg-black bg-cover bg-no-repeat bg-center"
-        style="background-image: url(./assets/images/footer-bg.svg);">
-        <div class="container mx-auto px-6 lg:px-20">
-          <!-- Footer Top -->
-          <div class="flex flex-wrap justify-between">
-            <!-- Company Info Section -->
-            <div class="w-full md:w-1/3 mb-8 md:mb-0">
-              <div class="md:flex-shrink-0">
-                <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
-              </div>
-              <img src="./assets/images/QRCode.svg" alt="QR Code" class="h-32 mt-4">
-              <!-- Social Media Icons -->
-              <div class="flex space-x-6 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
+    <footer class="text-white py-10 bg-black bg-cover bg-no-repeat bg-center"
+      style="background-image: url(./assets/images/footer-bg.svg);">
+      <div class="container mx-auto px-6 lg:px-20">
+        <!-- Footer Top -->
+        <div class="flex flex-wrap justify-between">
+          <!-- Company Info Section -->
+          <div class="w-full md:w-1/3 mb-8 md:mb-0">
+            <div class="md:flex-shrink-0">
+              <img src="./assets/images/ra-logo.svg" alt="Logo" class="h-8">
             </div>
-      
-            <!-- Quick Links Section -->
-            <div class="w-full md:w-1/3 mb-8 md:mb-0">
-              <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
-              <ul class="space-y-2">
-                <li><a href="/" class="text-sm hover:text-gray-400">Home</a></li>
-                <li><a href="about.html" class="text-sm hover:text-gray-400">About</a></li>
-                <li><a href="gallery.html" class="text-sm hover:text-gray-400">Gallery</a></li>
-                <li><a href="books.html" class="text-sm hover:text-gray-400">Books</a></li>
-                <li><a href="contact.html" class="text-sm hover:text-gray-400">Contact</a></li>
-              </ul>
-            </div>
-      
-            <!-- Location & Contact Section -->
-            <div class="w-full md:w-1/3">
-              <h3 class="text-lg font-semibold mb-3">Location</h3>
-              <p class="text-sm">
-                Behind J.G. Commerce College Hostel, <br>
-                Hosur-Unkal Bypass Road, <br>
-                Near New Court, Vidyanagar, <br>
-                Hubballi-580 021, Karnataka
-              </p>
-              <p class="text-sm mt-2">Email: <a href="mailto:renukaagency003@gmail.com" class="hover:text-gray-400">renukaagency003@gmail.com</a></p>
-              <p class="text-sm">Phone: (123) 456-7890</p>
-            </div>
-          </div>
-      
-          <!-- Footer Bottom -->
-          <div class="mt-10 flex flex-col md:flex-row items-center justify-between border-t pt-6">
-            <div class="flex items-center space-x-2 mb-4 md:mb-0">
-              <img src="./assets/images/ciresta-logo.svg" alt="Logo" class="h-6">
-              <a href="https://www.ciresta.in" target="_blank">
-                <span class="text-sm text-[#6a6a71]">Powered by Ciresta Technologies</span>
+            <img src="./assets/images/QRCode.svg" alt="QR Code" class="h-32 mt-4">
+            <!-- Social Media Icons -->
+            <div class="flex space-x-6 mt-4">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
-            <p class="text-sm text-center md:text-right">&copy; 2024 Renuka Agency. All Rights Reserved.</p>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="w-full md:w-1/3 mb-8 md:mb-0">
+            <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="/" class="text-sm hover:text-gray-400">Home</a></li>
+              <li><a href="about.html" class="text-sm hover:text-gray-400">About</a></li>
+              <li><a href="gallery.html" class="text-sm hover:text-gray-400">Gallery</a></li>
+              <li><a href="books.html" class="text-sm hover:text-gray-400">Books</a></li>
+              <li><a href="contact.html" class="text-sm hover:text-gray-400">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Location & Contact Section -->
+          <div class="w-full md:w-1/3">
+            <h3 class="text-lg font-semibold mb-3">Location</h3>
+            <p class="text-sm">
+              Behind J.G. Commerce College Hostel, <br>
+              Hosur-Unkal Bypass Road, <br>
+              Near New Court, Vidyanagar, <br>
+              Hubballi-580 021, Karnataka
+            </p>
+            <p class="text-sm mt-2">Email: <a href="mailto:renukaagency003@gmail.com"
+                class="hover:text-gray-400">renukaagency003@gmail.com</a></p>
+            <p class="text-sm">Phone: (123) 456-7890</p>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-10 flex flex-col md:flex-row items-center justify-between border-t pt-6">
+          <div class="flex items-center space-x-2 mb-4 md:mb-0">
+            <img src="./assets/images/ciresta-logo.svg" alt="Logo" class="h-6">
+            <a href="https://www.ciresta.in" target="_blank">
+              <span class="text-sm text-[#6a6a71]">Powered by Ciresta Technologies</span>
+            </a>
+          </div>
+          <p class="text-sm text-center md:text-right">&copy; 2024 Renuka Agency. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Hide preloader after page loads
+    window.addEventListener('load', function () {
+      const preloader = document.getElementById('preloader');
+      preloader.style.display = 'none'; // Hide preloader
+    });
+  </script>
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const carousel = document.getElementById('scroll-carousel');
-        let scrollAmount = 0;
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('scroll-carousel');
+    let scrollAmount = 0;
 
-        function autoScroll() {
-            scrollAmount += 1; // Scroll by 1px
-            if (scrollAmount >= carousel.scrollWidth / 2) {
-                scrollAmount = 0; // Reset to the start when halfway through
-            }
-            carousel.style.transform = `translateX(-${scrollAmount}px)`;
-        }
+    function autoScroll() {
+      scrollAmount += 1; // Scroll by 1px
+      if (scrollAmount >= carousel.scrollWidth / 2) {
+        scrollAmount = 0; // Reset to the start when halfway through
+      }
+      carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    }
 
-        // Start scrolling with a smooth interval
-        setInterval(autoScroll, 10); // Scroll every 10ms for a smooth effect
-    });
+    // Start scrolling with a smooth interval
+    setInterval(autoScroll, 10); // Scroll every 10ms for a smooth effect
+  });
 </script>
 <script src="./assets/js/script.js"></script>
 
